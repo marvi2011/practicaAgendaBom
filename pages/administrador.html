@@ -86,7 +86,13 @@
       <section class="mt-4">
         <div class="d-flex justify-content-between">
           <h1 class="text-center">Tabla de Contactos</h1>
-          <button class="btn btn-primary">Nuevo</button>
+          <button
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#modalAdmContacto"
+          >
+            Nuevo
+          </button>
         </div>
         <div class="table-reponsive">
           <table class="table table-striped">
@@ -96,38 +102,112 @@
                 <th>Apellido:</th>
                 <th>Nombre:</th>
                 <th>Mail:</th>
+                <th>Acciones:</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th>1</th>
-                <th>Martinez</th>
-                <th>Camila</th>
-                <th>camila@hotmail.com</th>
+                <td>1</td>
+                <td>Martinez</td>
+                <td>Camila</td>
+                <td>camila@hotmail.com</td>
+                <td>
+                  <button class="btn btn-success">Ver</button>
+                  <button class="btn btn-warning">Editar</button>
+                  <button class="btn btn-danger">Borrar</button>
+                </td>
               </tr>
               <tr>
-                <th>1</th>
-                <th>Martinez</th>
-                <th>Camila</th>
-                <th>camila@hotmail.com</th>
+                <td>1</td>
+                <td>Martinez</td>
+                <td>Camila</td>
+                <td>camila@hotmail.com</td>
+                <td>
+                  <button class="btn btn-success">Ver</button>
+                  <button class="btn btn-warning">Editar</button>
+                  <button class="btn btn-danger">Borrar</button>
+                </td>
               </tr>
               <tr>
-                <th>1</th>
-                <th>Martinez</th>
-                <th>Camila</th>
-                <th>camila@hotmail.com</th>
+                <td>1</td>
+                <td>Martinez</td>
+                <td>Camila</td>
+                <td>camila@hotmail.com</td>
+                <td>
+                  <button class="btn btn-success">Ver</button>
+                  <button class="btn btn-warning">Editar</button>
+                  <button class="btn btn-danger">Borrar</button>
+                </td>
               </tr>
               <tr>
-                <th>1</th>
-                <th>Martinez</th>
-                <th>Camila</th>
-                <th>camila@hotmail.com</th>
+                <td>1</td>
+                <td>Martinez</td>
+                <td>Camila</td>
+                <td>camila@hotmail.com</td>
+                <td>
+                  <button class="btn btn-success">Ver</button>
+                  <button class="btn btn-warning">Editar</button>
+                  <button class="btn btn-danger">Borrar</button>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
     </main>
+    <!-- Modal administrar Contacto-->
+    <div
+      class="modal fade"
+      id="modalAdmContacto"
+      tabindex="-1"
+      aria-labelledby="modalAdmContactoLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="modalAdmContactoLabel">
+              Administrar Contactos
+            </h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="apellido">
+              </div>
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre">
+              </div>
+              <div class="mb-3">
+                <label for="mail" class="form-label">Mail</label>
+                <input type="text" class="form-control" id="mail">
+              </div>
+              <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="text" class="form-control" id="telefono">
+              </div>
+              <div class="mb-3">
+                <label for="github" class="form-label">Usuario GitHub</label>
+                <input type="text" class="form-control" id="github">
+              </div>
+              <div class="mb-3">
+                <label for="domicilio" class="form-label">Domicilio</label>
+                <input type="text" class="form-control" id="domicilio">
+              </div>
+              <button class="btn btn-primary" type="submit">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <footer></footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
