@@ -1,0 +1,62 @@
+export class Contacto {
+  #id;
+  #apellido;
+  #nombre;
+  #mail;
+  #telefono;
+  #github;
+  #domicilio;
+  constructor(apellido, nombre, mail, telefono, github, domicilio) {
+    this.#id =crypto.randomUUID();
+    this.#apellido = apellido;
+    this.#nombre = nombre;
+    this.#mail = mail;
+    this.#telefono = telefono;
+    this.#github = github;
+    this.#domicilio = domicilio;
+  }
+  //agregar set y get
+  get id() {
+    return this.#id;
+}
+set id(value) {
+    this.#id = value;
+}
+get apellido() {
+    return this.#apellido;
+}
+set apellido(value) {
+    this.#apellido = value;
+}
+get nombre() {
+    return this.#nombre;
+}
+set nombre(value) {
+    this.#nombre = value;
+}
+get email() {
+    return this.#mail;
+}
+set email(value) {
+    this.#mail = value;
+}
+get telefono() {
+    return this.#telefono;
+}
+set telefono(value) {
+    this.#telefono = value;
+}
+get github() {
+    return this.#github;
+}
+set github(value) {
+    this.#github = value;
+}
+get direccion() {
+    return this.#domicilio;
+}
+set direccion(value) {
+    this.#domicilio = value;
+}
+
+}
