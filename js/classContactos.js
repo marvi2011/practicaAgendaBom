@@ -6,57 +6,64 @@ export class Contacto {
   #telefono;
   #github;
   #domicilio;
-  constructor(apellido, nombre, mail, telefono, github, domicilio) {
-    this.#id =crypto.randomUUID();
+  #foto;
+  constructor(apellido, nombre, mail, telefono, github, domicilio, foto) {
+    this.#id = crypto.randomUUID();
     this.#apellido = apellido;
     this.#nombre = nombre;
     this.#mail = mail;
     this.#telefono = telefono;
     this.#github = github;
     this.#domicilio = domicilio;
+    this.#foto = foto;
   }
   //agregar set y get
   get id() {
     return this.#id;
-}
-set id(value) {
+  }
+  set id(value) {
     this.#id = value;
-}
-get apellido() {
+  }
+  get apellido() {
     return this.#apellido;
-}
-set apellido(value) {
+  }
+  set apellido(value) {
     this.#apellido = value;
-}
-get nombre() {
+  }
+  get nombre() {
     return this.#nombre;
-}
-set nombre(value) {
+  }
+  set nombre(value) {
     this.#nombre = value;
-}
-get email() {
+  }
+  get email() {
     return this.#mail;
-}
-set email(value) {
+  }
+  set email(value) {
     this.#mail = value;
-}
-get telefono() {
+  }
+  get telefono() {
     return this.#telefono;
-}
-set telefono(value) {
+  }
+  set telefono(value) {
     this.#telefono = value;
-}
-get github() {
+  }
+  get github() {
     return this.#github;
-}
-set github(value) {
+  }
+  set github(value) {
     this.#github = value;
-}
-get direccion() {
+  }
+  get direccion() {
     return this.#domicilio;
-}
-set direccion(value) {
+  }
+  set direccion(value) {
     this.#domicilio = value;
-}
-
+  }
+  get foto() {
+    return this.#foto;
+  }
+  set foto(value) {
+    this.#foto = value;
+  }
 }
