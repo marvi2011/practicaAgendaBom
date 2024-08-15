@@ -29,7 +29,10 @@ const telefono = document.getElementById("telefono");
 const github = document.getElementById("github"), // se puede usar este método tambien para declarar las constantes
   domicilio = document.getElementById("domicilio"),
   foto = document.getElementById("foto");
-const listaContactos = [];
+//verificar si hay datos en el localstorage, si hay los traigo y sino que sea un array vacio
+const listaContactos =
+  JSON.parse(localStorage.getItem("listaContactokey")) || [];
+
 //ahora van las funciones
 const mostrarModal = () => {
   modalContacto.show();
