@@ -29,7 +29,7 @@ const telefono = document.getElementById("telefono");
 const github = document.getElementById("github"), // se puede usar este método tambien para declarar las constantes
   domicilio = document.getElementById("domicilio"),
   foto = document.getElementById("foto");
-
+const listaContactos = [];
 //ahora van las funciones
 const mostrarModal = () => {
   modalContacto.show();
@@ -50,10 +50,20 @@ const crearContacto = (e) => {
     foto.value
   );
   console.log(nuevoContacto);
-  //debo guardarlos en un array o lista de contactos
-  //guardar el array en un localstorage
-};
 
+  //debo guardarlos en un array o lista de contactos
+  listaContactos.push(nuevoContacto);
+  console.log(listaContactos);
+  limpiarform();
+  //guardar el array en un localstorage
+  guardarEnLocalStorage();
+};
+const limpiarform = () => {
+  formContacto.reset();
+};
+const guardarEnLocalStorage = () => {
+  localStorage.setItem("listaContactosKey", JSON.stringify(listaContactos));
+};
 //aqui agrego el resto de la logica
 btnNuevo.addEventListener("click", mostrarModal);
 formContacto.addEventListener("submit", crearContacto);

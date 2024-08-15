@@ -67,3 +67,17 @@ export class Contacto {
     this.#foto = value;
   }
 }
+//agregar los metodos para que funciones JSON.stringify.js
+toJSON(){
+  return{
+    id: this.id,
+    apellido: this.apellido,
+    nombre: this.nombre,
+    mail: this.mail,
+    telefono: this.telefono,
+    github: this.github,
+    domicilio: this.domicilio,
+    foto: this.foto
+
+  }
+}
