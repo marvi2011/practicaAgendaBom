@@ -1,9 +1,12 @@
 import Contacto from "./classContactos.js";
 
 //declaro las variables
-const modalContacto = new bootstrap.Modal(
-  document.getElementById("modalAdmContacto")
+const modalContacto = new bootstrap.Modal( //con esto hago que la ventana modal se abra desde javascript, debo quitar los data del html
+  document.getElementById("modalAdmContacto") //este es el id de la ventana modal
 );
+console.log(modalContacto);
+//modalContacto.show(); para saber si la linea de codigo anterior funciona bien pero la abre cuando se abre la pagina y necesitamos que lo haga cuando apretamos un boton, lo vamos a corregir
+
 const btnNuevo = document.getElementById("btnNuevo");
 const formContacto = document.getElementById("formContacto");
 //ahora traigo los input del formulario
@@ -54,7 +57,7 @@ const guardarEnLocalStorage = () => {
 };
 //aqui agrego la logica del CRUD
 //aqui agrego el resto de la logica
-//btnNuevo.addEventListener("click", mostrarModal);
+btnNuevo.addEventListener("click", mostrarModal);
 //formContacto.addEventListener("submit", crearContacto);
 
 console.log("Prueba desde admin");
