@@ -54,8 +54,8 @@ const guardarEnLocalStorage = () => {
 };
 //aqui agrego la logica del CRUD
 //aqui agrego el resto de la logica
-btnNuevo.addEventListener("click", mostrarModal);
-formContacto.addEventListener("submit", crearContacto);
+//btnNuevo.addEventListener("click", mostrarModal);
+//formContacto.addEventListener("submit", crearContacto);
 
 console.log("Prueba desde admin");
 const contacto = new Contacto(
