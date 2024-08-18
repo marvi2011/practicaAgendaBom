@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="es" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -90,6 +90,7 @@
             class="btn btn-primary"
             data-bs-toggle="modal"
             data-bs-target="#modalAdmContacto"
+            id="btnNuevo"
           >
             Nuevo
           </button>
@@ -106,17 +107,6 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Martinez</td>
-                <td>Camila</td>
-                <td>camila@hotmail.com</td>
-                <td>
-                  <button class="btn btn-success">Ver</button>
-                  <button class="btn btn-warning">Editar</button>
-                  <button class="btn btn-danger">Borrar</button>
-                </td>
-              </tr>
               <tr>
                 <td>1</td>
                 <td>Martinez</td>
@@ -177,7 +167,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form>
+            <form id="formContacto">
               <div class="mb-3">
                 <label for="apellido" class="form-label">Apellido</label>
                 <input type="text" class="form-control" id="apellido">
@@ -202,7 +192,11 @@
                 <label for="domicilio" class="form-label">Domicilio</label>
                 <input type="text" class="form-control" id="domicilio">
               </div>
-              <button class="btn btn-primary" type="submit">Enviar</button>
+              <div class="mb-3">
+                <label for="foto" class="form-label">Foto</label>
+                <input type="text" class="form-control" id="foto">
+              </div>
+              <button class="btn btn-primary" type="submit" id="btnEnviar">Enviar</button>
             </form>
           </div>
         </div>
@@ -214,5 +208,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/admin.js" type="module"></script>
   </body>
 </html>

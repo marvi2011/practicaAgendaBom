@@ -8,7 +8,7 @@ export default class Contacto {
   #domicilio;
   #foto;
   constructor(apellido, nombre, mail, telefono, github, domicilio, foto) {
-    this.#id = crypto.randomUUID();
+    this.#id = crypto.randomUUID(); //para encontrar un id
     this.#apellido = apellido;
     this.#nombre = nombre;
     this.#mail = mail;
