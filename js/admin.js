@@ -20,7 +20,7 @@ const github = document.getElementById("github"), // se puede usar este método 
 
 //verificar si hay datos en el localstorage, si hay los traigo y sino que sea un array vacio
 const listaContactos =
-  JSON.parse(localStorage.getItem("listaContactokey")) || [];
+  JSON.parse(localStorage.getItem("listaContactoskey")) || [];
 
 //ahora van las funciones
 const mostrarModal = () => {
@@ -49,11 +49,25 @@ const crearContacto = (e) => {
   //guardar el array en un localstorage
   guardarEnLocalStorage();
 };
-const limpiarform = () => { //se limpia el formulario despues de llenar los campos y darle enviar
+const limpiarform = () => {
+  //se limpia el formulario despues de llenar los campos y darle enviar
   formContacto.reset();
 };
 const guardarEnLocalStorage = () => {
   localStorage.setItem("listaContactosKey", JSON.stringify(listaContactos));
+};
+const cargaInicial = () => {
+  //preguntar si hay datos en el array
+  if (listaContactos.length > 0) {
+    //dibujar una fila en la tabla
+    listaContactos.map((contacto) => dibujarFila());
+  }
+};
+const dibujarFila = () => {
+  const tabla = document.querySelector("tbody");
+
+  tabla.innerHTML +=
+    "<tr><td>1</td><td>Martinez</td><td>Camila</td><td>camila@hotmail.com</td><td><button>Ver</button><button>Editar</button><button>Borrar</button></td></tr>";
 };
 //aqui agrego la logica del CRUD
 //aqui agrego el resto de la logica
@@ -73,18 +87,5 @@ console.log(contacto);
 
 //console.log(modalContacto);
 //modalContacto.show();
-
-const cargaInicial = () => {
-  //preguntar si hay datos en el array de contacto
-  if (listaContactos.length > 0) {
-    ///dibujar una fila en la tabla
-    listaContactos.map((contacto) => dibujarFila());
-  }
-};
-const dibujarFila = () => {
-  const tabla = document.querySelector("tbody");
-  tabla.innerHTML +=
-    '<tr><td>1</td><td>Martinez</td><td>Camila</td><td>camila@hotmail.com</td><td><button class="btn btn-success">Ver</button><button class="btn btn-warning">Editar</button><button class="btn btn-danger">Borrar</button></td></tr>';
-};
 
 cargaInicial();
