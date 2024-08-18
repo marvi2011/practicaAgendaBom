@@ -49,7 +49,7 @@ const crearContacto = (e) => {
   //guardar el array en un localstorage
   guardarEnLocalStorage();
 };
-const limpiarform = () => {
+const limpiarform = () => { //se limpia el formulario despues de llenar los campos y darle enviar
   formContacto.reset();
 };
 const guardarEnLocalStorage = () => {
@@ -58,7 +58,7 @@ const guardarEnLocalStorage = () => {
 //aqui agrego la logica del CRUD
 //aqui agrego el resto de la logica
 btnNuevo.addEventListener("click", mostrarModal);
-//formContacto.addEventListener("submit", crearContacto);
+formContacto.addEventListener("submit", crearContacto);
 
 console.log("Prueba desde admin");
 const contacto = new Contacto(
