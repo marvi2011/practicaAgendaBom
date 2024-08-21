@@ -36,10 +36,10 @@ export default class Contacto {
   set nombre(value) {
     this.#nombre = value;
   }
-  get email() {
+  get mail() {
     return this.#mail;
   }
-  set email(value) {
+  set mail(value) {
     this.#mail = value;
   }
   get telefono() {
@@ -54,10 +54,10 @@ export default class Contacto {
   set github(value) {
     this.#github = value;
   }
-  get direccion() {
+  get domicilio() {
     return this.#domicilio;
   }
-  set direccion(value) {
+  set domicilio(value) {
     this.#domicilio = value;
   }
   get foto() {
@@ -68,6 +68,7 @@ export default class Contacto {
   }
 
   //agregar los metodos para que funciones JSON.stringify.js
+  //el metodo JSON se usa cuando se tienen propiedades privadas, si no son privadas no hace falta hacerlo
   toJSON() {
     return {
       id: this.id,

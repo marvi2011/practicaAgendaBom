@@ -48,6 +48,7 @@ const crearContacto = (e) => {
   limpiarform();
   //guardar el array en un localstorage
   guardarEnLocalStorage();
+  dibujarFila(nuevoContacto); //este es el comando que me dibuja la fila cuando se crea el contacto... ahora borro del html los comandos que dibujan la tabla.
 };
 const limpiarform = () => {
   //se limpia el formulario despues de llenar los campos y darle enviar
@@ -60,14 +61,22 @@ const cargaInicial = () => {
   //preguntar si hay datos en el array
   if (listaContactos.length > 0) {
     //dibujar una fila en la tabla
-    listaContactos.map((contacto) => dibujarFila());
+    listaContactos.map((contacto) => dibujarFila(contacto));
   }
 };
-const dibujarFila = () => {
+const dibujarFila = (contacto) => {
   const tabla = document.querySelector("tbody");
-
-  tabla.innerHTML +=
-    "<tr><td>1</td><td>Martinez</td><td>Camila</td><td>camila@hotmail.com</td><td><button>Ver</button><button>Editar</button><button>Borrar</button></td></tr>";
+  tabla.innerHTML += `<tr>  
+    <td>${contacto.id}</td>
+    <td>${contacto.apellido}</td>
+    <td>${contacto.nombre}</td>
+    <td>${contacto.mail}</td>
+    <td>
+    <button class="btn btn-success">Ver</button>
+    <button class="btn btn-warning">Editar</button>
+    <button class="btn btn-danger">Borrar</button>
+    </td>
+    </tr>`; //OJO con las comillas que uso para que el codigo soporte los saltos de linea del html.
 };
 //aqui agrego la logica del CRUD
 //aqui agrego el resto de la logica
@@ -76,7 +85,7 @@ formContacto.addEventListener("submit", crearContacto);
 
 console.log("Prueba desde admin");
 const contacto = new Contacto(
-  "Martinez",
+  "MLopez",
   "Camila",
   "camila@hotmail.com",
   381222555,
@@ -89,3 +98,4 @@ console.log(contacto);
 //modalContacto.show();
 
 cargaInicial();
+dibujarFila(contacto); //si dejo esta linea habilitada cuando el programa se carga ya aparece dibujado el unico contacto que tengo en la lista
