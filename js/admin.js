@@ -55,7 +55,7 @@ const limpiarform = () => {
   formContacto.reset();
 };
 const guardarEnLocalStorage = () => {
-  localStorage.setItem("listaContactosKey", JSON.stringify(listaContactos));
+  localStorage.setItem('listaContactosKey', JSON.stringify(listaContactos)); //cuando tengo propiedades privadas tengo que hacer luegos de los get y set un toJASON
 };
 const cargaInicial = () => {
   //preguntar si hay datos en el array
@@ -83,7 +83,7 @@ const dibujarFila = (contacto) => {
 btnNuevo.addEventListener("click", mostrarModal);
 formContacto.addEventListener("submit", crearContacto);
 
-console.log("Prueba desde admin");
+/*console.log("Prueba desde admin");
 const contacto = new Contacto(
   "MLopez",
   "Camila",
@@ -92,10 +92,10 @@ const contacto = new Contacto(
   "-",
   "La Plata 25"
 );
-console.log(contacto);
+console.log(contacto);*/
 
 //console.log(modalContacto);
 //modalContacto.show();
 
 cargaInicial();
-dibujarFila(contacto); //si dejo esta linea habilitada cuando el programa se carga ya aparece dibujado el unico contacto que tengo en la lista
+//dibujarFila(contacto); //si dejo esta linea habilitada cuando el programa se carga ya aparece dibujado el unico contacto que tengo en la lista
