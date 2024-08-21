@@ -59,7 +59,7 @@ const guardarEnLocalStorage = () => {
 };
 const cargaInicial = () => {
   //preguntar si hay datos en el array
-  if (listaContactos.length > 0) {
+  if (listaContactos.length !== 0) {
     //dibujar una fila en la tabla
     listaContactos.map((contacto) => dibujarFila(contacto));
   }
